@@ -24,7 +24,8 @@
 				"noUnusedFunctionParameters": "error",
 				"noUnusedImports": "error",
 				"noUnusedVariables": "error",
-				"useHookAtTopLevel": "error"
+				"useHookAtTopLevel": "error",
+        "useUniqueElementIds": "off"
 			},
 			"style": {
 				"useBlockStatements": "error",

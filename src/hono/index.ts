@@ -3,6 +3,7 @@ import { cors } from "hono/cors";
 import { auth } from "@/lib/auth";
 import { BASE_URL } from "@/lib/config";
 import protectedRoutes from "./routes/protected";
+import publicRoutes from "./routes/public";
 
 export const app = new Hono().basePath("/api").use(
 	"*",
@@ -18,6 +19,7 @@ export const app = new Hono().basePath("/api").use(
 
 app.on(["POST", "GET"], "/auth/**", (c) => auth.handler(c.req.raw));
 
-const routes = app.route("/", protectedRoutes);
+// Add both public and protected routes
+const routes = app.route("/", publicRoutes).route("/", protectedRoutes);
 
 export type AppType = typeof routes;
