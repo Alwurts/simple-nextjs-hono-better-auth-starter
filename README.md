@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Simple Next.js + Hono + Better Auth Starter
+
+A simple starter project demonstrating end-to-end type safety with Next.js, HonoJS RPC, query handling, and Better Auth integration.
+
+## Features
+
+- **End-to-End Type Safety**: Full TypeScript integration between frontend and backend
+- **HonoJS RPC**: Efficient API routing with RPC pattern
+- **Query Handling**: Integrated query management for data fetching
+- **Better Auth**: Secure authentication system
+- **Todo App**: Example CRUD operations with todos
+- **Database**: Drizzle ORM with SQLite (easily configurable)
+
+## Tech Stack
+
+- **Frontend**: Next.js 15, React, TypeScript
+- **Backend**: HonoJS with RPC
+- **Auth**: Better Auth
+- **Database**: Drizzle ORM, SQLite
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies**:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   ```bash
+   npm install
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Set up environment variables**:
+   Copy `.env.example` to `.env.local` and configure your variables.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Run database migrations**:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   npm run db:generate
+   npm run db:migrate
+   ```
 
-## Learn More
+4. **Start the development server**:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Usage
 
-## Deploy on Vercel
+- Visit `/signup` to create an account
+- Visit `/login` to sign in
+- Access protected routes after authentication
+- Manage todos in the protected area
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `src/app/` - Next.js app router pages
+- `src/hono/` - HonoJS backend routes
+- `src/db/` - Database schema and services
+- `src/components/` - Reusable UI components
+- `src/lib/` - Utility functions and configurations
+
+## Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run db:generate` - Generate database schema
+- `npm run db:migrate` - Run database migrations
+- `npm run lint` - Run linter
+
+## Contributing
+
+This is a simple starter project. Feel free to fork and customize for your needs.
