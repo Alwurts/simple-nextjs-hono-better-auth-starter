@@ -9,6 +9,8 @@ export const env = createEnv({
 	server: {
 		// Database
 		POSTGRES_URL: z.string().min(1),
+		// Better Auth
+		BETTER_AUTH_SECRET: z.string().min(1),
 	},
 	/*
 	 * Environment variables available on the client (and server).
@@ -29,7 +31,9 @@ export const env = createEnv({
 	runtimeEnv: {
 		// Database
 		POSTGRES_URL: process.env.POSTGRES_URL,
-
+		// Better Auth
+		BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET,
+		// Vercel
 		NEXT_PUBLIC_VERCEL_ENV: process.env.NEXT_PUBLIC_VERCEL_ENV,
 		NEXT_PUBLIC_VERCEL_BRANCH_URL: process.env.NEXT_PUBLIC_VERCEL_BRANCH_URL,
 		NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL:
