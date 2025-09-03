@@ -22,7 +22,7 @@ export const honoAuthCheckMiddleware = async (
 	const session = c.get("session");
 	const user = c.get("user");
 
-	if (!session || !user || !session.activeOrganizationId) {
+	if (!session || !user) {
 		return c.json({ error: "Unauthorized" }, 401);
 	}
 
